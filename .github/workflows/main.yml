@@ -13,7 +13,7 @@ jobs:
       - name: Check Android project
         shell: bash
         run: |
-          cd GreenPulseAndroid
+          run:
           if [ ! -f gradlew ]; then
             echo "Android project or gradlew is missing"
             exit 1
