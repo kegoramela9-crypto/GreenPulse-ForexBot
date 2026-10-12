@@ -11,11 +11,10 @@ steps:
 uses: actions/checkout@v4
 
   - name: Check Android project
+    shell: bash
     run: |
-      echo "Checking for Android Gradle project"
       if [ ! -f gradlew ]; then
-        echo "No gradlew found in repository root."
-        echo "An Android Gradle project is required to build an APK."
+        echo "Android project or gradlew is missing."
         exit 1
       fi
       chmod +x gradlew
