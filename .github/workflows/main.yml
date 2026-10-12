@@ -12,14 +12,14 @@ jobs:
 
       - name: Check Android project
         shell: bash
-        run: |
-          run:
-          if [ ! -f gradlew ]; then
-            echo "Android project or gradlew is missing"
-            exit 1
-          fi
-          chmod +x gradlew
-
+            - name: Check Android project
+      shell: bash
+      run: |
+        if [ ! -f gradlew ]; then
+          echo "gradlew is missing in root directory"
+          exit 1
+        fi
+        chmod +x gradlew
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
