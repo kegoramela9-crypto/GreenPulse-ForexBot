@@ -1,11 +1,8 @@
-name: GreenPulse Android Build
-
-'on':
-workflow_dispatch:
-
-jobs:
-build:
-runs-on: ubuntu-latest
-steps:
-- name: Check repository
-run: echo "Workflow syntax test passed"
+- name: Check Android project
+  shell: bash
+  run: |
+    if [ ! -f gradlew ]; then
+      echo "Android project or gradlew is missing"
+      exit 1
+    fi
+    chmod +x gradlew
